@@ -19,8 +19,8 @@
         <li><a href="add"><i class="fa fa-plus" aria-hidden="true"></i> Add</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
-        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+        <li><a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+        <li><a data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();"><i class="fa fa-sign-out" aria-hidden="true"></i> Register</a></li>
         <li><a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Account</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
