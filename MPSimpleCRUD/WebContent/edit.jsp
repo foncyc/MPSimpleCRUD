@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
@@ -65,13 +68,12 @@
 
 						<div class="card wizard-card" data-color="orange"
 							id="wizardProfile">
-							<form action="add" method="post">
+							<form action="edit?id=<c:out value="${member.id}"/>" method="post">
 								<!--        You can switch ' data-color="orange" '  with one of the next bright colors: "blue", "green", "orange", "red"          -->
 
 								<div class="wizard-header">
 									<h3>
-										<b>ADD</b> YOUR HAPPY PEANUT <br> <small>take
-											your time and digest your peanuts properly</small>
+										<b>EDIT</b> THIS OLD PEANUT <br> <small>Why can't you just buy a new pack?</small>
 									</h3>
 								</div>
 
@@ -103,58 +105,49 @@
 												<div class="form-group">
 													<label>Profile Photo <small>(required)</small></label> <input
 														name="picture" type="text" class="form-control"
-														placeholder="Andrew..." required>
+														placeholder="Andrew..." value="<c:out value="${member.picture}"/>" required>
 												</div>
 												<div class="form-group">
 													<label>First Name <small>(required)</small></label> <input
 														name="firstName" type="text" class="form-control"
-														placeholder="Andrew...">
+														placeholder="Andrew..." value="<c:out value="${member.firstName}"/>">
 												</div>
 												<div class="form-group">
 													<label>Last Name <small>(required)</small></label> <input
 														name="lastName" type="text" class="form-control"
-														placeholder="Smith...">
+														placeholder="Smith..." value="<c:out value="${member.lastName}"/>">
 												</div>
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
 													<label>Motto <small>(required)</small></label> <input
 														name="motto" type="text" class="form-control"
-														placeholder="Roses are red...">
+														placeholder="Roses are red..." value="<c:out value="${member.motto}"/>">
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="tab-pane" id="description">
-										<h4 class="info-text">What can your peanut do?</h4>
+										<h4 class="info-text">Does peanut have any new tricks?</h4>
 										<div class="row">
 
 											<div class="col-sm-10 col-sm-offset-1">
 
 												<div class="form-group">
 													<label>Profession</label><br> <select
-														name="profession" class="form-control" required>
-														<option value="...">...</option>
-														<option value="ITDC Student">ITDC Student</option>
-														<option value="Front End Dev">Front End Dev</option>
-														<option value="Back End Dev">Back End Dev</option>
-														<option value="Full Stack Dev">Full Stack Dev</option>
-														<option value="Data Analyst">Data Analyst</option>
-														<option value="Pen Tester">Pen Tester</option>
-														<option value="Game Developer">Game Developer</option>
-														<option value="Mobile Developer">Mobile Developer
-														</option>
+														name="profession" class="form-control" value="<c:out value="${member.profession}"/>" required>
+														
+														<c:forEach var="title" items="${titles}">
+													        <option value="${title}" ${title == member.profession ? 'selected="selected"' : ''}>${title}</option>
+													    </c:forEach>
+													    
 													</select>
 												</div>
-												<!-- <div class="form-group">
-													<label>Job Description <small>(required)</small></label> <input
-														name="profession" type="text" class="form-control"
-														placeholder="student , developer, etc..." required>
-												</div>-->
+												
 												<div class="form-group">
 													<label>Skills <small>(required)</small></label> <input
 														name="skills" type="text" class="form-control"
-														placeholder="student , developer, etc..." required>
+														placeholder="student , developer, etc..." value="<c:out value="${member.skills}"/>"required>
 												</div>
 
 											</div>
@@ -168,17 +161,20 @@
 												<div class="form-group">
 													<label>FaceBook <small>(required)</small></label> <input
 														name="facebook" type="text" class="form-control"
-														placeholder="https://facebook.com/(profile)..." required>
+														placeholder="https://facebook.com/(profile)..." 
+														value="<c:out value="${member.facebook}"/>" required>
 												</div>
 												<div class="form-group">
 													<label>GitHub <small>(required)</small></label> <input
 														name="github" type="text" class="form-control"
-														placeholder="https://github.com/(profile)..." required>
+														placeholder="https://github.com/(profile)..." 
+														value="<c:out value="${member.github}"/>" required>
 												</div>
 												<div class="form-group">
 													<label>LinkedIn <small>(required)</small></label> <input
 														name="linkedin" type="text" class="form-control"
-														placeholder="https://linkedin.com/(profile)..." required>
+														placeholder="https://linkedin.com/(profile)..." 
+														value="<c:out value="${member.linkedin}"/>" required>
 												</div>
 
 											</div>

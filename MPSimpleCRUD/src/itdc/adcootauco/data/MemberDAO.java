@@ -9,9 +9,9 @@ public interface MemberDAO {
 	
 	public void addMember(Member member);
 	
-	public void updateMember(Member member);
+	public boolean updateMember(Member member);
 	
-	public void deleteMember(Member member);
+	public boolean deleteMember(Member member);
 	
 	public Member findMember(String id);
 	

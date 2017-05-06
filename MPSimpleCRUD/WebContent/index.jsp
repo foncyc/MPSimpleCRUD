@@ -30,8 +30,8 @@
 								<div class="content">
 									<div class="main">
 										<h3 class="name"><c:out value="${member.firstName}"/>  <c:out value="${member.lastName}"/></h3>
-										<p class="profession">Student</p>
-										<p class="text-center">"<c:out value="${member.motto})"/>"</p>
+										<p class="profession"><c:out value="${member.profession}"/></p>
+										<p class="text-center">"<c:out value="${member.motto}"/>"</p>
 									</div>
 									<div class="footer">
 										<div class="rating">
@@ -45,9 +45,8 @@
 								<div class="header">
 									<div class="motto">
 
-										<a href="edit?id=<c:out value="${member.id}"/>" class="betw"><i class="fa fa-pencil"
-											aria-hidden="true"></i> Edit </a> <a href="#" class="betw"><i
-											class="fa fa-trash" aria-hidden="true"></i> Delete </a>
+										<a href="edit?id=<c:out value="${member.id}"/>" class="betw"><i class="fa fa-pencil" aria-hidden="true"></i> Edit </a> 
+										<a href="delete?id=<c:out value="${member.id}"/>" class="betw"><i class="fa fa-trash" aria-hidden="true"></i> Delete </a>
 									</div>
 								</div>
 								<div class="content">

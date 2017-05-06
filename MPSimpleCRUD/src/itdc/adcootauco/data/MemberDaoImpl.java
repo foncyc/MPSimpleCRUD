@@ -18,7 +18,7 @@ public class MemberDaoImpl implements MemberDAO {
 	public static final String DBGETALL_MEMBER = "SELECT id, picture, firstName, lastName, motto, profession, skills, facebook, github, linkedin FROM members";
 	public static final String DBDELETE_MEMBER = "DELETE FROM members WHERE id = ?";
 	public static final String DBIS_MATCH = "SELECT id, picture, firstName, lastName, motto, profession, skills, facebook, github, linkedin FROM members WHERE firstName = ? and lastName = ?";
-	
+	public static final String DBUPDATE_MEMBER = "UPDATE members SET picture = ?, firstName = ?, lastName = ?, motto = ?, profession = ?, skills = ?, facebook = ?, github = ?, linkedin = ? WHERE id = ?";
 	
 	@Override
 	public void addMember(Member member) {
@@ -57,13 +57,73 @@ public class MemberDaoImpl implements MemberDAO {
 	}
 	
 	@Override
-	public void updateMember(Member member) {
+	public boolean updateMember(Member member) {
+		
+		Connection conn = DataSourceFactory.getJNDIDBConnection();
+		if(conn==null) {
+			System.out.println("No connection... in Update Method");
+		}
+		boolean update = false;
+		
+		try (PreparedStatement stmt = conn.prepareStatement(DBUPDATE_MEMBER);) {		
+			
+			stmt.setString(1, member.getPicture());
+			stmt.setString(2, member.getFirstName());
+			stmt.setString(3, member.getLastName());
+			stmt.setString(4, member.getMotto());
+			stmt.setString(5, member.getProfession());
+			stmt.setString(6, member.getSkills());
+			stmt.setString(7, member.getFacebook());
+			stmt.setString(8, member.getGithub());
+			stmt.setString(9, member.getLinkedin());
+			stmt.setInt(10, member.getId());
+			stmt.executeUpdate();
+			
+			update = true;
+						
+		} catch(SQLException ex) {
+			ex.printStackTrace();
+			System.out.println("Update Unsuccessfull");
+		} finally {
+			try {
+				conn.close();
+			} catch(SQLException ex) {
+				ex.printStackTrace();
+			}
+		}
+				
+		return update;
 		
 	}
 	
 	@Override
-	public void deleteMember(Member member) {
+	public boolean deleteMember(Member member) {
 		
+		Connection conn = DataSourceFactory.getJNDIDBConnection();
+		if(conn==null) {
+			System.out.println("No connection... in Delete Method");
+		}
+		boolean delete = false;
+		
+		try (PreparedStatement stmt = conn.prepareStatement(DBDELETE_MEMBER);) {		
+			
+			stmt.setInt(1, member.getId());
+			stmt.executeUpdate();
+			
+			delete = true;
+						
+		} catch(SQLException ex) {
+			ex.printStackTrace();
+			System.out.println("Delete Unsuccessfull");
+		} finally {
+			try {
+				conn.close();
+			} catch(SQLException ex) {
+				ex.printStackTrace();
+			}
+		}
+				
+		return delete;
 	}
 	
 	@Override

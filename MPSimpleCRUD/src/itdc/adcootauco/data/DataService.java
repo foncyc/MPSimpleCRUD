@@ -22,6 +22,30 @@ public class DataService {
 		return add;
 	}
 	
+	public Member retrieveData(String id) {
+		Member member = dao.findMember(id);
+		return member;
+	}
+	
+	public boolean updateMember(Member member){
+		
+		return dao.updateMember(member);
+		
+	}
+	
+	public boolean deleteMember(String id){
+		
+		boolean delete = false;
+		Member member = retrieveData(id);
+		
+		if(member!=null){
+			
+			delete = dao.deleteMember(member);
+		}
+		
+		return delete;
+	}
+	
 	public List<Member> getAllMembers(){
 		
 		return dao.getAllMembers();
