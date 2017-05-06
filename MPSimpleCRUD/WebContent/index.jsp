@@ -1,8 +1,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="partials/header.jsp"%>
-<%@ include file="partials/navbar.jsp"%>
-<%@ include file="partials/logreg.jsp"%>
 
+<%@ include file="partials/login-register.jsp"%>
+
+<c:set var="user" value="${email}" />
+
+<%@ include file="partials/navbar.jsp"%>
+
+
+<!--<c:out value="${user}"/>-->
 
 <div class="container">
 	<div class="row">
@@ -46,11 +52,15 @@
 							<div class="back">
 								<div class="header">
 									<div class="motto">
-
+										<c:if test="${user != null}">
 										<a href="edit?id=<c:out value="${member.id}"/>" class="betw"><i class="fa fa-pencil" aria-hidden="true"></i> Edit </a> 
 										<a href="delete?id=<c:out value="${member.id}"/>" onclick="return confirm('Are you sure you want to Remove?')" class="betw delete"><i class="fa fa-trash" aria-hidden="true"></i> Delete </a>
 										<!-- onclick="return confirm('Are you sure you want to Remove?');" -->
 										<!-- data-confirm="Are you sure to delete this item?" -->
+										</c:if>
+										<c:if test="${user == null}">
+											<h4>Peanut Trooper</h4>
+										</c:if>
 									</div>
 								</div>
 								<div class="content">
