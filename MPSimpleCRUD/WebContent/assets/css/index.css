@@ -1,14 +1,38 @@
 body {
-	margin:0;
+	margin: 0;
+	padding-top: 75px;
+	background-image: url('../images/woman-wandering-in-forest.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 .center {
-     float: none;
-     margin-left: auto;
-     margin-right: auto;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .betw {
 	margin-left: 10px;
 	margin-right: 10px;
+}
+
+.navtop {
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px
+		rgba(0, 0, 0, 0.22);
+	/*box-shadow: 0 14px 28px white;*/
+}
+
+.navbar-custom {
+	background: #abbaab; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ffffff, #abbaab);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ffffff, #abbaab);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.prof-shadow {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }

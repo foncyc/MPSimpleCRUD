@@ -1,0 +1,18 @@
+body {
+	margin:0;
+	
+	background-image: url('../images/Metallic-Toad.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.footer {
+	color: grey;
+}
+
+.foncy {
+	color: orange;
+}

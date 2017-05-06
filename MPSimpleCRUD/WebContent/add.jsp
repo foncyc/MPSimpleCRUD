@@ -11,7 +11,7 @@
 	href="assets/images/apple-icon.png">
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<title>Get Shit Done Bootstrap Wizard by Creative Tim</title>
+<title>Add A Happy Peanut</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -29,31 +29,12 @@
 
 <!-- CSS Just for demo purpose, don't include it in your project -->
 <link href="assets/css/demo.css" rel="stylesheet" />
+<link href="assets/css/add.css" rel="stylesheet" />
+
 </head>
 
-
 <body>
-	<div class="image-container set-full-height"
-		style="background-image: url('assets/images/wizard.jpg')">
-		<!--   Creative Tim Branding   -->
-		<a href="http://creative-tim.com">
-			<div class="logo-container">
-				<div class="logo">
-					<img src="assets/images/new_logo.png">
-				</div>
-				<div class="brand">Creative Tim</div>
-			</div>
-		</a>
-
-		<!--  Made With Get Shit Done Kit  -->
-		<a
-			href="http://demos.creative-tim.com/get-shit-done/index.html?ref=get-shit-done-bootstrap-wizard"
-			class="made-with-mk">
-			<div class="brand">GK</div>
-			<div class="made-with">
-				Made with <strong>GSDK</strong>
-			</div>
-		</a>
+	
 
 		<!--   Big container   -->
 		<div class="container">
@@ -216,12 +197,11 @@
 		<div class="footer">
 			<div class="container">
 				Made with <i class="fa fa-heart heart"></i> by <a
-					href="http://www.creative-tim.com">Creative Tim</a>. Free download
-				<a href="http://www.creative-tim.com/product/bootstrap-wizard">here.</a>
+					href="http://adcootauco.herokuapp.com"><span class="foncy">Foncy Cootauco</span></a>.
 			</div>
 		</div>
 
-	</div>
+
 
 </body>
 

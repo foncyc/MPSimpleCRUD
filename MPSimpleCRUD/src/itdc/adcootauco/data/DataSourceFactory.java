@@ -41,7 +41,6 @@ public class DataSourceFactory {
 			DataSource ds = (DataSource) initialContext.lookup(DATASOURCE_CONTEXT);
 			if (ds != null) {
 				conn = ds.getConnection();
-				System.out.println("JNDI resource found!");
 			} else {
 				System.out.println("JNDI resource not found!");	
 			}

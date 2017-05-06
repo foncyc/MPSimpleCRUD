@@ -6,7 +6,7 @@
 <head>
 <link href='assets/css/bootstrap.css' rel='stylesheet' />
 <link href='assets/css/rotating-card.css' rel='stylesheet' />
-<link href='assets/css/index.css' rel='stylesheet' />
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -30,6 +30,7 @@
 	crossorigin="anonymous"></script>
 	
 <script src='assets/js/index.js'></script>
+<link href='assets/css/index.css' rel='stylesheet' />
 
 </head>
 

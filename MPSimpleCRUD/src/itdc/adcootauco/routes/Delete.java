@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import itdc.adcootauco.data.DataService;
+
 
 @WebServlet("/delete")
 public class Delete extends HttpServlet {
@@ -18,7 +20,12 @@ public class Delete extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String id = request.getParameter("id");
+		DataService service = new DataService();
+		service.deleteMember(id);
+		
+		response.sendRedirect("index");
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

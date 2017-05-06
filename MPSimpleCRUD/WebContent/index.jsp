@@ -22,7 +22,7 @@
 						<div class="card">
 							<div class="front">
 								<div class="cover">
-									<img src="assets/images/rotating_card_thumb2.png" />
+									<img src="assets/images/Metallic-Toad.jpg" />
 								</div>
 								<div class="user">
 									<img class="img-circle" src="<c:out value="${member.picture}"/>" />
@@ -46,7 +46,9 @@
 									<div class="motto">
 
 										<a href="edit?id=<c:out value="${member.id}"/>" class="betw"><i class="fa fa-pencil" aria-hidden="true"></i> Edit </a> 
-										<a href="delete?id=<c:out value="${member.id}"/>" class="betw"><i class="fa fa-trash" aria-hidden="true"></i> Delete </a>
+										<a href="delete?id=<c:out value="${member.id}"/>" onclick="return confirm('Are you sure you want to Remove?')" class="betw delete"><i class="fa fa-trash" aria-hidden="true"></i> Delete </a>
+										<!-- onclick="return confirm('Are you sure you want to Remove?');" -->
+										<!-- data-confirm="Are you sure to delete this item?" -->
 									</div>
 								</div>
 								<div class="content">
