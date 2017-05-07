@@ -23,6 +23,31 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public void addUser(User user) {
 		
+		Connection conn = DataSourceFactory.getJNDIDBConnection();
+		if(conn==null) {
+			System.out.println("No connection...");
+		}
+		
+		try (PreparedStatement stmt = conn.prepareStatement(ADD_USER);) {
+			//conn.setAutoCommit(false);
+			stmt.setString(1, user.getEmail());
+			stmt.setString(2, user.getPassword());
+			stmt.execute();
+			//conn.setAutoCommit(true);
+		} catch(SQLException ex) {
+			ex.printStackTrace();
+			try {
+				conn.rollback();
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+		} finally {
+			try {
+			   conn.close();
+			} catch(Exception ex) {
+				
+			}
+		}
 	}
 	@Override
 	public boolean updateUser(User user) {

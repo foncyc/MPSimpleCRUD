@@ -36,15 +36,25 @@ public class Login extends HttpServlet {
 		AuthService auth = new AuthService();
 		
 		User user = new User(email, password);
+		RequestDispatcher rd = null;
 		
 		if(auth.isMatch(user)){
 			HttpSession session = request.getSession();
 			session.setAttribute("email", email);
-			
-			response.sendRedirect("index");
+						
+			String msg = "You have successfully logged in.";
+			request.setAttribute("msg", msg);
+			rd = request.getRequestDispatcher("index");
+			rd.forward(request, response);
 			
 		} else {
-			response.sendRedirect("login.jsp");
+			
+			String error = "Incorrect Credentials. Please Try Again.";
+			request.setAttribute("error", error );
+			rd = request.getRequestDispatcher("login.jsp");
+			rd.forward(request, response);
+			
+			
 		}
 		
 		

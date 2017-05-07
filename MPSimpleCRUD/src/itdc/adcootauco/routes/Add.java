@@ -49,9 +49,10 @@ public class Add extends HttpServlet {
 				linkedin);
 		service.addMember(member);
 		
-//		RequestDispatcher rd = request.getRequestDispatcher("index");
-//		rd.forward(request, response);
-		response.sendRedirect("index");
+		String msg = "You have successfully added Peanut Trooper " + firstName + " " + lastName;
+		request.setAttribute("msg", msg);
+		RequestDispatcher rd = request.getRequestDispatcher("index");
+		rd.forward(request, response);
 	}
 
 }

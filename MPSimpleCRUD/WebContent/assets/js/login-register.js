@@ -56,10 +56,25 @@ function loginAjax(){
     */
 
 /*   Simulate error message from the server   */
+
      shakeModal();
 }
 
-function shakeModal(){
+function registerAjax(){
+		
+	$("#regz").submit(function(event){
+		var password = $("#passwordR").val();
+		var passwordConfirm = $("#password_confirmationR").val();
+		
+		if(password != passwordConfirm){
+			event.preventDefault();
+			shakeModalRegister();
+		}
+	});
+	
+}
+
+function shakeModalLogin(){
     $('#loginModal .modal-dialog').addClass('shake');
              $('.error').addClass('alert alert-danger').html("Invalid email/password combination");
              $('input[type="password"]').val('');
@@ -68,4 +83,12 @@ function shakeModal(){
     }, 1000 ); 
 }
 
+function shakeModalRegister(){
+    $('#loginModal .modal-dialog').addClass('shake');
+             $('.error').addClass('alert alert-danger').html("Password is incompatible");
+             $('input[type="password"]').val('');
+             setTimeout( function(){ 
+                $('#loginModal .modal-dialog').removeClass('shake'); 
+    }, 1000 ); 
+}
    

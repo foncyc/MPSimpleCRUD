@@ -20,36 +20,31 @@
 
 <div class="container login-container">
 
-	<form class="form-signin" action="login" method="post">
-		<h2 class="form-signin-heading">Please sign in</h2>
+	<form class="form-signin" action="register" method="post">
+		<h2 class="form-signin-heading">Create a Peanut</h2>
 
 		<label for="inputEmail" class="sr-only">Email address</label> <input
 			name="email" type="email" id="inputEmail" class="form-control"
 			placeholder="Email address" required autofocus> <label
 			for="inputPassword" class="sr-only">Password</label> <input
 			name="password" type="password" id="inputPassword"
-			class="form-control" placeholder="Password" required>
+			class="form-control" placeholder="Password" required> <label
+			for="password_confirmation" class="sr-only">Password</label> <input
+			name="password_confirmation" type="password"
+			id="password_confirmation" class="form-control"
+			placeholder="Confirm Password" required>
 
-		<div class="checkbox">
-			<label> <input type="checkbox" value="remember-me">
-				Remember me
-			</label>
-		</div>
-
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
-			in</button>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
 	</form>
 
 	<div class="">
 		<div class="">
-			<span>Looking to <a href="register.jsp">create
-					an account</a> ?
-			</span>
+			<span>Already have an account?</span> <a href="login.jsp">Login</a>
 		</div>
 	</div>
 
-</div>
 
+</div>
 
 <!-- /container -->
 

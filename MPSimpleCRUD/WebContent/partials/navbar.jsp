@@ -25,7 +25,7 @@
 				</c:if>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-
+				
 				<c:if test="${user == null}">
 					<li><a data-toggle="modal" href="javascript:void(0)"
 						onclick="openLoginModal();"><i class="fa fa-sign-in"

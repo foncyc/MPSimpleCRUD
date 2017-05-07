@@ -13,6 +13,14 @@ public class AuthService {
 		
 	}
 	
+	public void addUser(String email, String password){
+		auth.addUser(new User(email, password));
+	}
+	
+	public User findUser(String email){
+		return auth.findUser(email);
+	}
+	
 	public boolean isMatch(User user){
 		
 		return auth.isMatch(user);

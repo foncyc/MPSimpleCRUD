@@ -1,6 +1,8 @@
 package itdc.adcootauco.routes;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +26,10 @@ public class Delete extends HttpServlet {
 		DataService service = new DataService();
 		service.deleteMember(id);
 		
-		response.sendRedirect("index");
+		String msg = "You killed Peanut Trooper #" + id;
+		request.setAttribute("msg", msg);
+		RequestDispatcher rd = request.getRequestDispatcher("index");
+		rd.forward(request, response);
 		
 	}
 
