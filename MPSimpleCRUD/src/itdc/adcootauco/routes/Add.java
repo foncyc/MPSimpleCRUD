@@ -25,6 +25,7 @@ public class Add extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("add.jsp");
 		rd.forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

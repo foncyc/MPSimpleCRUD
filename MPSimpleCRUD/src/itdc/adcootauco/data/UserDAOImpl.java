@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 import itdc.adcootauco.data.DataSourceFactory;
@@ -13,16 +11,21 @@ import itdc.adcootauco.model.User;
 
 public class UserDAOImpl implements UserDAO {
 	
-	public static final String ADD_USER = "INSERT INTO users (email, password) VALUES (?,?)";
-	public static final String FIND_USER = "SELECT email, password FROM users WHERE email = ?";
-	public static final String GETALL_USER = "SELECT * FROM users";
-	public static final String DELETE_USER = "DELETE FROM users WHERE email = ?";
-	public static final String IS_MATCH = "SELECT email, password FROM users WHERE email = ? and password = ?";
-	public static final String UPDATE_USER = "UPDATE users SET email = ?, password = ? WHERE email = ?";
+	public static final String ADD_USER = "INSERT INTO safe (email, password) VALUES (?,AES_ENCRYPT(?, 'h3G5Lu8if1WPN4Rs012p'))";
+	public static final String FIND_USER = "SELECT email, password FROM safe WHERE email = ?";
+	public static final String IS_MATCH = "SELECT email, AES_DECRYPT(password,'h3G5Lu8if1WPN4Rs012p') FROM safe WHERE email = ? and AES_DECRYPT(password,'h3G5Lu8if1WPN4Rs012p') = ?";
+	
+//	public static final String ADD_USER = "INSERT INTO users (email, password) VALUES (?,?)";
+//	public static final String FIND_USER = "SELECT email, password FROM users WHERE email = ?";
+//	public static final String GETALL_USER = "SELECT * FROM users";
+//	public static final String DELETE_USER = "DELETE FROM users WHERE email = ?";
+//	public static final String IS_MATCH = "SELECT email, password FROM users WHERE email = ? and password = ?";
+//	public static final String UPDATE_USER = "UPDATE users SET email = ?, password = ? WHERE email = ?";
 	
 	@Override
 	public void addUser(User user) {
 		
+			
 		Connection conn = DataSourceFactory.getJNDIDBConnection();
 		if(conn==null) {
 			System.out.println("No connection...");
@@ -49,16 +52,19 @@ public class UserDAOImpl implements UserDAO {
 			}
 		}
 	}
+	
 	@Override
 	public boolean updateUser(User user) {
 
 		return false;
 	}
+	
 	@Override
 	public boolean deleteUser(User user) {
 
 		return false;
 	}
+	
 	@Override
 	public User findUser(String username) {
 		

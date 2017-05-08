@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
@@ -34,43 +35,42 @@
 </head>
 
 <body>
-	
 
-		<!--   Big container   -->
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2">
+	<!--<c:out value="${user}"/>-->
 
-					<!--      Wizard container        -->
-					<div class="wizard-container">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
 
-						<div class="card wizard-card" data-color="orange"
-							id="wizardProfile">
-							<form action="add" method="post">
-								<!--        You can switch ' data-color="orange" '  with one of the next bright colors: "blue", "green", "orange", "red"          -->
+				<!--      Wizard container        -->
+				<div class="wizard-container">
 
-								<div class="wizard-header">
-									<h3>
-										<b>ADD</b> YOUR HAPPY PEANUT <br> <small>take
-											your time and digest your peanuts properly</small>
-									</h3>
-								</div>
+					<div class="card wizard-card" data-color="orange"
+						id="wizardProfile">
+						<form action="add" method="post">
+							<!--        You can switch ' data-color="orange" '  with one of the next bright colors: "blue", "green", "orange", "red"          -->
 
-								<div class="wizard-navigation">
-									<ul>
-										<li><a href="#about" data-toggle="tab">About</a></li>
-										<li><a href="#description" data-toggle="tab">Account</a></li>
-										<li><a href="#social" data-toggle="tab">Address</a></li>
-									</ul>
+							<div class="wizard-header">
+								<h3>
+									<b>ADD</b> YOUR HAPPY PEANUT <br> <small>take your
+										time and digest your peanuts properly</small>
+								</h3>
+							</div>
 
-								</div>
+							<div class="wizard-navigation">
+								<ul>
+									<li><a href="#about" data-toggle="tab">About</a></li>
+									<li><a href="#description" data-toggle="tab">Account</a></li>
+									<li><a href="#social" data-toggle="tab">Address</a></li>
+								</ul>
 
-								<div class="tab-content">
-									<div class="tab-pane" id="about">
-										<div class="row">
-											<h4 class="info-text">Let's start with your peanut's
-												info</h4>
-											<div class="col-sm-4 col-sm-offset-1">
+							</div>
+
+							<div class="tab-content">
+								<div class="tab-pane" id="about">
+									<div class="row">
+										<h4 class="info-text">Let's start with your peanut's info</h4>
+										<!-- <div class="col-sm-4 col-sm-offset-1">
 												<div class="picture-container">
 													<div class="picture">
 														<img src="assets/images/default-avatar.png"
@@ -79,127 +79,132 @@
 													</div>
 													<h6>Choose Picture</h6>
 												</div>
+											</div> -->
+
+										<div class="col-sm-10 col-sm-offset-1">
+
+
+											<div class="form-group">
+												<label>Profile Photo <small>(required)</small></label> <input
+													name="picture" type="text" class="form-control"
+													placeholder="Andrew..." required>
 											</div>
-											<div class="col-sm-6">
-												<div class="form-group">
-													<label>Profile Photo <small>(required)</small></label> <input
-														name="picture" type="text" class="form-control"
-														placeholder="Andrew..." required>
-												</div>
-												<div class="form-group">
-													<label>First Name <small>(required)</small></label> <input
-														name="firstName" type="text" class="form-control"
-														placeholder="Andrew...">
-												</div>
-												<div class="form-group">
-													<label>Last Name <small>(required)</small></label> <input
-														name="lastName" type="text" class="form-control"
-														placeholder="Smith...">
-												</div>
+											<div class="form-group">
+												<label>First Name <small>(required)</small></label> <input
+													name="firstName" type="text" class="form-control"
+													placeholder="Andrew...">
 											</div>
-											<div class="col-sm-10 col-sm-offset-1">
-												<div class="form-group">
-													<label>Motto <small>(required)</small></label> <input
-														name="motto" type="text" class="form-control"
-														placeholder="Roses are red...">
-												</div>
+											<div class="form-group">
+												<label>Last Name <small>(required)</small></label> <input
+													name="lastName" type="text" class="form-control"
+													placeholder="Smith...">
+											</div>
+
+											<div class="form-group">
+												<label>Motto <small>(required)</small></label> <input
+													name="motto" type="text" class="form-control"
+													placeholder="Roses are red...">
 											</div>
 										</div>
 									</div>
-									<div class="tab-pane" id="description">
-										<h4 class="info-text">What can your peanut do?</h4>
-										<div class="row">
+								</div>
+								<div class="tab-pane" id="description">
+									<h4 class="info-text">What can your peanut do?</h4>
+									<div class="row">
 
-											<div class="col-sm-10 col-sm-offset-1">
+										<div class="col-sm-10 col-sm-offset-1">
 
-												<div class="form-group">
-													<label>Profession</label><br> <select
-														name="profession" class="form-control" required>
-														<option value="...">...</option>
-														<option value="ITDC Student">ITDC Student</option>
-														<option value="Front End Dev">Front End Dev</option>
-														<option value="Back End Dev">Back End Dev</option>
-														<option value="Full Stack Dev">Full Stack Dev</option>
-														<option value="Data Analyst">Data Analyst</option>
-														<option value="Pen Tester">Pen Tester</option>
-														<option value="Game Developer">Game Developer</option>
-														<option value="Mobile Developer">Mobile Developer
-														</option>
-													</select>
-												</div>
-												<!-- <div class="form-group">
+											<div class="form-group">
+												<label>Profession</label><br> <select name="profession"
+													class="form-control" required>
+													<option value="...">...</option>
+													<option value="ITDC Student">ITDC Student</option>
+													<option value="Front End Dev">Front End Dev</option>
+													<option value="Back End Dev">Back End Dev</option>
+													<option value="Full Stack Dev">Full Stack Dev</option>
+													<option value="Data Analyst">Data Analyst</option>
+													<option value="Pen Tester">Pen Tester</option>
+													<option value="Game Developer">Game Developer</option>
+													<option value="Mobile Developer">Mobile Developer
+													</option>
+												</select>
+											</div>
+											<!-- <div class="form-group">
 													<label>Job Description <small>(required)</small></label> <input
 														name="profession" type="text" class="form-control"
 														placeholder="student , developer, etc..." required>
 												</div>-->
-												<div class="form-group">
-													<label>Skills <small>(required)</small></label> <input
-														name="skills" type="text" class="form-control"
-														placeholder="student , developer, etc..." required>
-												</div>
-
+											<div class="form-group">
+												<label>Skills <small>(required)</small></label> <input
+													name="skills" type="text" class="form-control"
+													placeholder="student , developer, etc..." required>
 											</div>
 
 										</div>
+
 									</div>
-									<div class="tab-pane" id="social">
-										<div class="row">
-											<div class="col-sm-10 col-sm-offset-1">
+								</div>
+								<div class="tab-pane" id="social">
+									<h4 class="info-text">Show off your peanut!</h4>
+									<div class="row">
+										<div class="col-sm-10 col-sm-offset-1">
 
-												<div class="form-group">
-													<label>FaceBook <small>(required)</small></label> <input
-														name="facebook" type="text" class="form-control"
-														placeholder="https://facebook.com/(profile)..." required>
-												</div>
-												<div class="form-group">
-													<label>GitHub <small>(required)</small></label> <input
-														name="github" type="text" class="form-control"
-														placeholder="https://github.com/(profile)..." required>
-												</div>
-												<div class="form-group">
-													<label>LinkedIn <small>(required)</small></label> <input
-														name="linkedin" type="text" class="form-control"
-														placeholder="https://linkedin.com/(profile)..." required>
-												</div>
-
+											<div class="form-group">
+												<label>FaceBook <small>(required)</small></label> <input
+													name="facebook" type="text" class="form-control"
+													placeholder="https://facebook.com/(profile)..." required>
 											</div>
-											
+											<div class="form-group">
+												<label>GitHub <small>(required)</small></label> <input
+													name="github" type="text" class="form-control"
+													placeholder="https://github.com/(profile)..." required>
+											</div>
+											<div class="form-group">
+												<label>LinkedIn <small>(required)</small></label> <input
+													name="linkedin" type="text" class="form-control"
+													placeholder="https://linkedin.com/(profile)..." required>
+											</div>
+
 										</div>
+
 									</div>
 								</div>
-								<div class="wizard-footer height-wizard">
-									<div class="pull-right">
-										<input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm'
-											name='next' value='Next' /> 
-										<input type='submit' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm'
-											name='finish' value='Finish' />
+							</div>
+							<div class="wizard-footer height-wizard">
+								<div class="pull-right">
+									<input type='button'
+										class='btn btn-next btn-fill btn-warning btn-wd btn-sm'
+										name='next' value='Next' /> <input type='submit'
+										class='btn btn-finish btn-fill btn-warning btn-wd btn-sm'
+										name='finish' value='Finish' />
 
-									</div>
-
-									<div class="pull-left">
-										<input type='button'
-											class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
-											name='previous' value='Previous' />
-									</div>
-									<div class="clearfix"></div>
 								</div>
 
-							</form>
-						</div>
+								<div class="pull-left">
+									<input type='button'
+										class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
+										name='previous' value='Previous' />
+								</div>
+								<div class="clearfix"></div>
+							</div>
+
+						</form>
 					</div>
-					<!-- wizard container -->
 				</div>
+				<!-- wizard container -->
 			</div>
-			<!-- end row -->
 		</div>
-		<!--  big container -->
+		<!-- end row -->
+	</div>
+	<!--  big container -->
 
-		<div class="footer">
-			<div class="container">
-				Made with <i class="fa fa-heart heart"></i> by <a
-					href="http://adcootauco.herokuapp.com"><span class="foncy">Foncy Cootauco</span></a>.
-			</div>
+	<div class="footer">
+		<div class="container">
+			Made with <i class="fa fa-heart heart"></i> by <a
+				href="http://adcootauco.herokuapp.com"><span class="foncy">Foncy
+					Cootauco</span></a>.
 		</div>
+	</div>
 
 
 

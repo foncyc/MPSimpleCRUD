@@ -18,6 +18,6 @@ public interface UserDAO {
 	
 	public boolean isMatch(User user);
 	
-	public List<User> getAllUsers();
+	public List<User> getAllUsers();	
 	
 }
